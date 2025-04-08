@@ -17,7 +17,10 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Frontend URL
+    allow_origins=[
+        "http://localhost:5173",  # Local development
+        "https://ploypruekcharoen.github.io"  # GitHub Pages
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
