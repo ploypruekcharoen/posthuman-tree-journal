@@ -1,4 +1,5 @@
 import { RefObject } from 'react';
+import instructionImg from '../assets/instruction-img.png';
 
 interface LandingPageProps {
   mapRef: RefObject<HTMLDivElement>;
@@ -32,19 +33,19 @@ const LandingPage = ({ mapRef }: LandingPageProps) => {
             <div><p className="hashtag"># Co-speculate posthuman tree with AI</p></div>
           </div>
           <div className="image-container" style={{ maxWidth: '70%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img 
-              src="./src/assets/instruction-img.png" 
-              alt="Instruction" 
-              style={{ 
-                maxWidth: '80%', 
+            <img
+              src={instructionImg}
+              alt="Instruction"
+              style={{
+                maxWidth: '80%',
                 height: 'auto',
                 objectFit: 'contain'
-              }} 
+              }}
             />
           </div>
         </div>
       </section>
-      
+
       <div className="scroll-down-button">
         <button
           onClick={scrollToMap}
