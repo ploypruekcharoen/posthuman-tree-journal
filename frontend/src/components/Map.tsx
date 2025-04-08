@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from 'react';
 import mapImage from '../assets/map-light.png';
 import mapDarkImage from '../assets/map-dark.png';
 import JourneyForm from './JourneyForm';
-import JourneyCard from './JourneyCard';
 import WorldToggle from './WorldToggle';
 import { Journey, Position } from '../types/Journey';
 import flowerButton from '../assets/button-flower.svg';
@@ -12,7 +11,6 @@ const Map = () => {
   const [journeys, setJourneys] = useState<Journey[]>([]);
   const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
   const [isAddingJourney, setIsAddingJourney] = useState(false);
-  const [hoveredJourney, setHoveredJourney] = useState<Journey | null>(null);
   const [selectedJourney, setSelectedJourney] = useState<Journey | null>(null);
   const [isDarkWorld, setIsDarkWorld] = useState(false);
   const [showToggle, setShowToggle] = useState(false);
@@ -197,11 +195,9 @@ const Map = () => {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1.1)';
-                    setHoveredJourney(journey);
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'translate(-50%, -50%)';
-                    setHoveredJourney(null);
                   }}
                   onClick={() => handleJourneyClick(journey)}
                 >

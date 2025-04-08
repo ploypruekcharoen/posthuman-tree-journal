@@ -1,3 +1,5 @@
+import { config } from '../config';
+
 interface ImageGenerationResponse {
   description: string;
   image_data: string;
@@ -11,7 +13,7 @@ export const generateAlternativeImage = async (image: string, description: strin
     formData.append('file', base64Image);
     formData.append('description', description);
 
-    const response = await fetch('http://localhost:8000/generate_image', {
+    const response = await fetch(`${config.apiUrl}/generate_image`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
