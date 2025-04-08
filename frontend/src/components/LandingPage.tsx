@@ -33,7 +33,7 @@ const LandingPage = ({ mapRef }: LandingPageProps) => {
           </div>
           <div className="image-container" style={{ maxWidth: '70%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <img 
-              src="./src/assets/instruction.png" 
+              src="./src/assets/instruction-img.png" 
               alt="Instruction" 
               style={{ 
                 maxWidth: '80%', 
